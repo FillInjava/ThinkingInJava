@@ -39,5 +39,18 @@ public class OptionalExample {
         System.out.println("Use map: name = [" + name.map(x->x.toUpperCase()).orElse("no value") + "]");
         System.out.println("Use map: empty = [" + empty.map(x->x.toUpperCase()).orElse("no value") + "]");
 
+        //USE flatMap
+        Optional<String> uperName =  name.flatMap(value->Optional.of(value.toUpperCase()));
+        System.out.println("uperName = [" + uperName.orElse("default value") + "]");
+
+        //filter
+        Optional<String> loginName = name.filter(value->value.length()>5);
+        System.out.println("loginName = [" + loginName.orElse("The name is less than 6 characters") + "]");
+
+        Optional<String> anotherName = Optional.of("lg");
+        Optional<String> shortName = anotherName.filter(value->value.length()>5);
+        System.out.println("shortName = [" + shortName.orElse("The name is less than 6 characters") + "]");
+
+
     }
 }

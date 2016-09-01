@@ -1,4 +1,4 @@
-package com.java8.example.com.java8.example.stream;
+package com.java8.example.stream;
 
 import java.util.ArrayList;
 import java.util.Collections;

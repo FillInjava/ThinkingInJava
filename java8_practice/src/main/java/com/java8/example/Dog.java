@@ -8,7 +8,7 @@ public class Dog {
     int height;
     int weight;
 
-    public  Dog(String n,int h,int w){
+    public Dog(String n, int h, int w) {
         this.name = n;
         this.height = h;
         this.weight = w;

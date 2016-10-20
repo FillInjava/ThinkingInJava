@@ -1,7 +1,6 @@
 package com.java8.example;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.stream.Stream;
 
 /**
@@ -9,11 +8,11 @@ import java.util.stream.Stream;
  */
 public class ArraysSort {
     public static void main(String[] args) {
-        Dog d1 = new Dog("Max",2,50);
+        Dog d1 = new Dog("Max", 2, 50);
         Dog d2 = new Dog("Rocky", 1, 30);
         Dog d3 = new Dog("Bear", 3, 40);
 
-        Dog[] dogArray = { d1, d2, d3 };
+        Dog[] dogArray = {d1, d2, d3};
         printDogs(dogArray);
 
       /*  Arrays.sort(dogArray, new Comparator<Dog>() {
@@ -23,15 +22,15 @@ public class ArraysSort {
             }
         });*/
 
-      //use java8 lambda
-        Arrays.sort(dogArray,(Dog m,Dog n) -> m.getWeight()-n.getWeight());
+        //use java8 lambda
+        Arrays.sort(dogArray, (Dog m, Dog n) -> m.getWeight() - n.getWeight());
         printDogs(dogArray);
 
         //use stream
         System.out.println("************use Stream***********");
         Stream<Dog> dogStream = Stream.of(dogArray);
-        Stream<Dog> sortedDogStream = dogStream.sorted((m,n)->Integer.compare(m.getWeight(),n.getWeight()));
-        sortedDogStream.forEach(n-> System.out.println(n));
+        Stream<Dog> sortedDogStream = dogStream.sorted((m, n) -> Integer.compare(m.getWeight(), n.getWeight()));
+        sortedDogStream.forEach(n -> System.out.println(n));
 
     }
 

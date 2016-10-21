@@ -15,7 +15,7 @@ public class PPrint {
             if(c.size() != 1){
                 sb.append("\n ");
             }
-            sb.append(c);
+            sb.append(ele);
         }
         if(c.size() != 1){
             sb.append("\n");
